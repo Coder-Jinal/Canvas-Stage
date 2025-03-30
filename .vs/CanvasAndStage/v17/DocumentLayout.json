@@ -1,0 +1,418 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documents\\Backend\\CanvasAndStage\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\artistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\artistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\services\\artistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\services\\artistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\interfaces\\iartistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\interfaces\\iartistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\interfaces\\ieventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\interfaces\\ieventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\models\\artwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\models\\artwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\models\\artist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\models\\artist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\models\\attendee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\models\\attendee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\services\\attendeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\services\\attendeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\attendeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\attendeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\interfaces\\iattendeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\interfaces\\iattendeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\models\\serviceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\models\\serviceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\services\\artworkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\services\\artworkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\interfaces\\iartworkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\interfaces\\iartworkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\artworkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\artworkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\data\\migrations\\20250329020844_fixcontactnumbertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\data\\migrations\\20250329020844_fixcontactnumbertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Documents\\Backend\\Passion-Project\\EventManagementSystem\\Services\\EventService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\data\\migrations\\20250329020158_revertcontactnumbertointeger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\data\\migrations\\20250329020158_revertcontactnumbertointeger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\data\\migrations\\20250329164334_updatephonenumbertostring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\data\\migrations\\20250329164334_updatephonenumbertostring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\EventController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\EventController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\EventController.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAqwJ8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T21:46:32.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Services\\EventService.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Services\\EventService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Services\\EventService.cs",
+              "RelativeToolTip": "CanvasAndStage\\Services\\EventService.cs",
+              "ViewState": "AgIAAEsBAAAAAAAAAAAcwFUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T22:25:29.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Artist.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\Artist.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Models\\Artist.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\Artist.cs",
+              "RelativeToolTip": "CanvasAndStage\\Models\\Artist.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T16:40:37.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Artwork.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\Artwork.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Models\\Artwork.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\Artwork.cs",
+              "RelativeToolTip": "CanvasAndStage\\Models\\Artwork.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowCQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:54:54.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ArtistService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Services\\ArtistService.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Services\\ArtistService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Services\\ArtistService.cs",
+              "RelativeToolTip": "CanvasAndStage\\Services\\ArtistService.cs",
+              "ViewState": "AgIAANkAAAAAAAAAAAAcwOIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:48:09.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ArtistController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtistController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\ArtistController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtistController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\ArtistController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAcwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:47:10.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IArtistService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Interfaces\\IArtistService.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Interfaces\\IArtistService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Interfaces\\IArtistService.cs",
+              "RelativeToolTip": "CanvasAndStage\\Interfaces\\IArtistService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:47:46.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IEventService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Interfaces\\IEventService.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Interfaces\\IEventService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Interfaces\\IEventService.cs",
+              "RelativeToolTip": "CanvasAndStage\\Interfaces\\IEventService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T22:20:23.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Attendee.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\Attendee.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Models\\Attendee.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\Attendee.cs",
+              "RelativeToolTip": "CanvasAndStage\\Models\\Attendee.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAswDEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:28:40.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AttendeeController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\AttendeeController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\AttendeeController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\AttendeeController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\AttendeeController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvz0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:39:32.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IAttendeeService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Interfaces\\IAttendeeService.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Interfaces\\IAttendeeService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Interfaces\\IAttendeeService.cs",
+              "RelativeToolTip": "CanvasAndStage\\Interfaces\\IAttendeeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:30:16.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AttendeeService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Services\\AttendeeService.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Services\\AttendeeService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Services\\AttendeeService.cs",
+              "RelativeToolTip": "CanvasAndStage\\Services\\AttendeeService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAADwvx0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:37:33.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Event.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Models\\Event.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\Event.cs",
+              "RelativeToolTip": "CanvasAndStage\\Models\\Event.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowBUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T22:21:38.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ServiceResponse.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\ServiceResponse.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Models\\ServiceResponse.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Models\\ServiceResponse.cs",
+              "RelativeToolTip": "CanvasAndStage\\Models\\ServiceResponse.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T22:29:11.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Program.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Program.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Program.cs",
+              "RelativeToolTip": "CanvasAndStage\\Program.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAABQAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T21:47:43.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "20250329164334_UpdatePhoneNumberToString.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Data\\Migrations\\20250329164334_UpdatePhoneNumberToString.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Data\\Migrations\\20250329164334_UpdatePhoneNumberToString.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Data\\Migrations\\20250329164334_UpdatePhoneNumberToString.cs",
+              "RelativeToolTip": "CanvasAndStage\\Data\\Migrations\\20250329164334_UpdatePhoneNumberToString.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T16:43:35.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "CanvasAndStage\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:26:04.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ArtworkService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Services\\ArtworkService.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Services\\ArtworkService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Services\\ArtworkService.cs",
+              "RelativeToolTip": "CanvasAndStage\\Services\\ArtworkService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:51:09.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ArtworkController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtworkController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\ArtworkController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtworkController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\ArtworkController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:50:30.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IArtworkService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Interfaces\\IArtworkService.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Interfaces\\IArtworkService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Interfaces\\IArtworkService.cs",
+              "RelativeToolTip": "CanvasAndStage\\Interfaces\\IArtworkService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:50:52.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250329020158_RevertContactNumberToInteger.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Data\\Migrations\\20250329020158_RevertContactNumberToInteger.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Data\\Migrations\\20250329020158_RevertContactNumberToInteger.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Data\\Migrations\\20250329020158_RevertContactNumberToInteger.cs",
+              "RelativeToolTip": "CanvasAndStage\\Data\\Migrations\\20250329020158_RevertContactNumberToInteger.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T02:01:59.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20250329020844_FixContactNumberType.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Data\\Migrations\\20250329020844_FixContactNumberType.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Data\\Migrations\\20250329020844_FixContactNumberType.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Data\\Migrations\\20250329020844_FixContactNumberType.cs",
+              "RelativeToolTip": "CanvasAndStage\\Data\\Migrations\\20250329020844_FixContactNumberType.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwDcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T02:08:45.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\Passion-Project\\EventManagementSystem\\Services\\EventService.cs",
+              "RelativeDocumentMoniker": "..\\Passion-Project\\EventManagementSystem\\Services\\EventService.cs",
+              "ToolTip": "D:\\Documents\\Backend\\Passion-Project\\EventManagementSystem\\Services\\EventService.cs",
+              "RelativeToolTip": "..\\Passion-Project\\EventManagementSystem\\Services\\EventService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T22:33:31.818Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
