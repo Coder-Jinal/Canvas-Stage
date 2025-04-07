@@ -1,0 +1,31 @@
+﻿@model CanvasAndStage.Models.AddAttendeeDto
+@{
+    ViewData["Title"] = "Add Attendee";
+}
+
+<h2>Add Attendee</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ContactNumber"></label>
+        <input asp-for="ContactNumber" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a asp-action="List" class="btn btn-secondary">Cancel</a>
+</form>

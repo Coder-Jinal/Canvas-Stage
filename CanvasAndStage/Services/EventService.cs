@@ -1,11 +1,11 @@
-﻿using CanvasAndStage.Interfaces;
+﻿using CanvasAndStage.Data;
+using CanvasAndStage.Interfaces;
 using CanvasAndStage.Models;
-using CanvasAndStage.Data;
+using CanvasAndStage.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-
 
 namespace CanvasAndStage.Services
 {
@@ -20,66 +20,120 @@ namespace CanvasAndStage.Services
 
         public async Task<IEnumerable<EventDto>> ListEvents()
         {
-            List<Event> events = await _context.Events.ToListAsync();
-            List<EventDto> eventDtos = new();
+            var events = await _context.Events
+                .Include(e => e.Attendees)
+                .Include(e => e.Artists)
+                .Include(e => e.Purchases)
+                .ToListAsync();
 
-            foreach (Event ev in events)
+            if (events.Count == 0) return [];
+
+            return events.Select(e => new EventDto
             {
-                eventDtos.Add(new EventDto()
-                {
-                    EventId = ev.EventId,
-                    Name = ev.Name,
-                    Description = ev.Description,
-                    Location = ev.Location,
-                    Date = ev.Date
-                });
-            }
-
-            return eventDtos;
+                EventId = e.EventId,
+                Name = e.Name,
+                Location = e.Location,
+                Description = e.Description,
+                Date = e.Date,
+                TotalAttendees = e.Attendees.Count,
+                AttendeeNames = e.Attendees.Select(a => a.FirstName + " " + a.LastName).ToList(),
+                TotalArtists = e.Artists.Count,
+                ArtistNames = e.Artists.Select(a => a.FName + " " + a.LName).ToList(),
+                TotalPurchase = e.Purchases.Sum(p => p.TotalPrice)
+            }).ToList();
         }
 
         public async Task<EventDto?> FindEvent(int id)
         {
-            var ev = await _context.Events.FirstOrDefaultAsync(e => e.EventId == id);
+            var targetEvent = await _context.Events
+                .Include(e => e.Attendees)
+                .Include(e => e.Artists)
+                    .ThenInclude(a => a.Artworks)
+                .Include(e => e.Purchases)
+                .FirstOrDefaultAsync(e => e.EventId == id);
 
-            if (ev == null) return null;
+            if (targetEvent == null) return null;
 
-            return new EventDto()
+            return new EventDto
             {
-                EventId = ev.EventId,
-                Name = ev.Name,
-                Description = ev.Description,
-                Location = ev.Location,
-                Date = ev.Date
+                EventId = targetEvent.EventId,
+                Name = targetEvent.Name,
+                Location = targetEvent.Location,
+                Description = targetEvent.Description,
+                Date = targetEvent.Date,
+                TotalAttendees = targetEvent.Attendees.Count,
+                AttendeeNames = targetEvent.Attendees.Select(a => a.FirstName + " " + a.LastName).ToList(),
+                TotalArtists = targetEvent.Artists.Count,
+                ArtistNames = targetEvent.Artists.Select(a => a.FName + " " + a.LName).ToList(),
+                TotalPurchase = targetEvent.Purchases.Sum(p => p.TotalPrice)
             };
         }
 
-        public async Task<ServiceResponse> UpdateEvent(EventDto eventDto)
+
+
+        public async Task<ServiceResponse> AddEvent(AddEventDto dto)
         {
             ServiceResponse response = new();
 
-            var ev = await _context.Events.FindAsync(eventDto.EventId);
+            Event newEvent = new()
+            {
+                Name = dto.Name,
+                Location = dto.Location,
+                Description = dto.Description,
+                Date = dto.Date
+            };
 
-            if (ev == null)
+            try
+            {
+                _context.Events.Add(newEvent);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("An error occurred while adding the event.");
+                response.Messages.Add(ex.Message);
+                return response;
+            }
+
+            response.Status = ServiceResponse.ServiceStatus.Created;
+            response.CreatedId = newEvent.EventId;
+            return response;
+        }
+
+        public async Task<ServiceResponse> UpdateEvent(int id, UpdateEventDto dto)
+        {
+            ServiceResponse response = new();
+
+            if (id != dto.EventId)
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("Event ID mismatch.");
+                return response;
+            }
+
+            var eventToUpdate = await _context.Events.FindAsync(id);
+            if (eventToUpdate == null)
             {
                 response.Status = ServiceResponse.ServiceStatus.NotFound;
                 response.Messages.Add("Event not found.");
                 return response;
             }
 
-            ev.Name = eventDto.Name;
-            ev.Description = eventDto.Description;
-            ev.Location = eventDto.Location;
-            ev.Date = eventDto.Date;
+            eventToUpdate.Name = dto.Name;
+            eventToUpdate.Location = dto.Location;
+            eventToUpdate.Description = dto.Description;
+            eventToUpdate.Date = dto.Date;
 
             try
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
                 response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error updating the event.");
+                response.Messages.Add("An error occurred while updating the event.");
+                response.Messages.Add(ex.Message);
                 return response;
             }
 
@@ -87,45 +141,12 @@ namespace CanvasAndStage.Services
             return response;
         }
 
-
-        public async Task<ServiceResponse> AddEvent(EventDto eventDto)
-        {
-            ServiceResponse response = new();
-
-            Event ev = new()
-            {
-                Name = eventDto.Name,
-                Description = eventDto.Description,
-                Location = eventDto.Location,
-                Date = eventDto.Date
-            };
-
-            try
-            {
-                await _context.Events.AddAsync(ev);
-                await _context.SaveChangesAsync();
-
-                response.Status = ServiceResponse.ServiceStatus.Created;
-                response.CreatedId = ev.EventId;
-            }
-            catch (Exception ex)
-            {
-                response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error adding the event.");
-                response.Messages.Add(ex.Message);
-                return response;
-            }
-
-            return response;
-        }
-
-
         public async Task<ServiceResponse> DeleteEvent(int id)
         {
             ServiceResponse response = new();
 
-            var ev = await _context.Events.FindAsync(id);
-            if (ev == null)
+            var eventToDelete = await _context.Events.FindAsync(id);
+            if (eventToDelete == null)
             {
                 response.Status = ServiceResponse.ServiceStatus.NotFound;
                 response.Messages.Add("Event not found.");
@@ -134,13 +155,14 @@ namespace CanvasAndStage.Services
 
             try
             {
-                _context.Events.Remove(ev);
+                _context.Events.Remove(eventToDelete);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
                 response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error deleting the event.");
+                response.Messages.Add("Error encountered while deleting the event.");
+                response.Messages.Add(ex.Message);
                 return response;
             }
 
@@ -148,234 +170,170 @@ namespace CanvasAndStage.Services
             return response;
         }
 
-        public async Task<ServiceResponse> LinkAttendeeToEvent(int eventId, int attendeeId)
-        {
-            ServiceResponse serviceResponse = new();
 
-            Event? eventEntity = await _context.Events
+
+        public async Task<ServiceResponse> LinkAttendee(int eventId, int attendeeId)
+        {
+            ServiceResponse response = new();
+
+            var eventEntity = await _context.Events
                 .Include(e => e.Attendees)
-                .Where(e => e.EventId == eventId)
-                .FirstOrDefaultAsync();
-            Attendee? attendee = await _context.Attendees.FindAsync(attendeeId);
+                .FirstOrDefaultAsync(e => e.EventId == eventId);
+
+            var attendee = await _context.Attendees.FindAsync(attendeeId);
 
             if (eventEntity == null || attendee == null)
             {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                if (eventEntity == null) serviceResponse.Messages.Add("Event was not found.");
-                if (attendee == null) serviceResponse.Messages.Add("Attendee was not found.");
-                return serviceResponse;
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Event or Attendee not found.");
+                return response;
             }
+
+            if (eventEntity.Attendees.Any(a => a.AttendeeId == attendeeId))
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("Attendee is already linked to this event.");
+                return response;
+            }
+
+            eventEntity.Attendees.Add(attendee);
 
             try
             {
-                eventEntity.Attendees.Add(attendee);
                 await _context.SaveChangesAsync();
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Created;
+                response.Status = ServiceResponse.ServiceStatus.Success;
             }
             catch (Exception ex)
             {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                serviceResponse.Messages.Add("There was an issue linking the attendee to the event.");
-                serviceResponse.Messages.Add(ex.Message);
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("An error occurred while linking the attendee.");
+                response.Messages.Add(ex.Message);
             }
 
-            return serviceResponse;
+            return response;
         }
 
-        public async Task<ServiceResponse> UnlinkAttendeeFromEvent(int eventId, int attendeeId)
+        public async Task<ServiceResponse> UnlinkAttendee(int eventId, int attendeeId)
         {
-            ServiceResponse serviceResponse = new();
+            ServiceResponse response = new();
 
-            Event? eventEntity = await _context.Events
+            var eventEntity = await _context.Events
                 .Include(e => e.Attendees)
-                .Where(e => e.EventId == eventId)
-                .FirstOrDefaultAsync();
-            Attendee? attendee = await _context.Attendees.FindAsync(attendeeId);
+                .FirstOrDefaultAsync(e => e.EventId == eventId);
 
-            if (eventEntity == null || attendee == null)
+            if (eventEntity == null)
             {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                if (eventEntity == null) serviceResponse.Messages.Add("Event was not found.");
-                if (attendee == null) serviceResponse.Messages.Add("Attendee was not found.");
-                return serviceResponse;
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Event not found.");
+                return response;
             }
+
+            var attendee = eventEntity.Attendees.FirstOrDefault(a => a.AttendeeId == attendeeId);
+            if (attendee == null)
+            {
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Attendee not linked to this event.");
+                return response;
+            }
+
+            eventEntity.Attendees.Remove(attendee);
 
             try
             {
-                eventEntity.Attendees.Remove(attendee);
                 await _context.SaveChangesAsync();
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Deleted;
+                response.Status = ServiceResponse.ServiceStatus.Success;
             }
             catch (Exception ex)
             {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                serviceResponse.Messages.Add("There was an issue unlinking the attendee from the event.");
-                serviceResponse.Messages.Add(ex.Message);
-            }
-
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse> LinkArtistToEvent(int eventId, int artistId)
-        {
-            ServiceResponse serviceResponse = new();
-
-            Event? eventEntity = await _context.Events
-                .Include(e => e.Artists)
-                .Where(e => e.EventId == eventId)
-                .FirstOrDefaultAsync();
-            Artist? artist = await _context.Artists.FindAsync(artistId);
-
-            if (eventEntity == null || artist == null)
-            {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                if (eventEntity == null)
-                {
-                    serviceResponse.Messages.Add("Event was not found.");
-                }
-                if (artist == null)
-                {
-                    serviceResponse.Messages.Add("Artist was not found.");
-                }
-                return serviceResponse;
-            }
-
-            try
-            {
-                eventEntity.Artists.Add(artist);
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                serviceResponse.Messages.Add("There was an issue linking the artist to the event.");
-                serviceResponse.Messages.Add(ex.Message);
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                return serviceResponse;
-            }
-
-            serviceResponse.Status = ServiceResponse.ServiceStatus.Created;
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse> UnlinkArtistFromEvent(int eventId, int artistId)
-        {
-            ServiceResponse serviceResponse = new();
-
-            Event? eventEntity = await _context.Events
-                .Include(e => e.Artists)
-                .Where(e => e.EventId == eventId)
-                .FirstOrDefaultAsync();
-            Artist? artist = await _context.Artists.FindAsync(artistId);
-
-            if (eventEntity == null || artist == null)
-            {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                if (eventEntity == null)
-                {
-                    serviceResponse.Messages.Add("Event was not found.");
-                }
-                if (artist == null)
-                {
-                    serviceResponse.Messages.Add("Artist was not found.");
-                }
-                return serviceResponse;
-            }
-
-            try
-            {
-                eventEntity.Artists.Remove(artist);
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                serviceResponse.Messages.Add("There was an issue unlinking the artist from the event.");
-                serviceResponse.Messages.Add(ex.Message);
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                return serviceResponse;
-            }
-
-            serviceResponse.Status = ServiceResponse.ServiceStatus.Deleted;
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse> ListAttendeesForEvent(int eventId)
-        {
-            var response = new ServiceResponse();
-
-            try
-            {
-                // Check if event exists
-                var eventExists = await _context.Events.AnyAsync(e => e.EventId == eventId);
-                if (!eventExists)
-                {
-                    response.Success = false;
-                    response.Message = "Event not found.";
-                    return response;
-                }
-
-                // Fetch attendees for the given event
-                var attendees = await _context.Attendees
-                    .Where(a => a.Events.Any(e => e.EventId == eventId)) // Ensure EF can translate this
-                    .Select(a => new AttendeeDto
-                    {
-                        AttendeeId = a.AttendeeId,
-                        FirstName = a.FirstName,
-                        LastName = a.LastName,
-                        Email = a.Email,
-                        ContactNumber = a.ContactNumber,
-                        EventIds = a.Events.Select(e => e.EventId).ToList(),
-                        PurchaseIds = a.Purchases.Select(p => p.PurchaseId).ToList()
-                    })
-                    .ToListAsync(); // Forces execution at database level
-
-                response.Success = true;
-                response.Data = attendees;
-            }
-            catch (Exception ex)
-            {
-                response.Success = false;
-                response.Message = ex.Message;
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("An error occurred while unlinking the attendee.");
+                response.Messages.Add(ex.Message);
             }
 
             return response;
         }
 
 
-
-
-        public async Task<ServiceResponse> ListArtistsForEvent(int eventId)
+        public async Task<ServiceResponse> LinkArtist(int eventId, int artistId)
         {
-            var response = new ServiceResponse();
+            ServiceResponse response = new();
+
+            var eventEntity = await _context.Events
+                .Include(e => e.Artists)
+                .FirstOrDefaultAsync(e => e.EventId == eventId);
+
+            var artist = await _context.Artists.FindAsync(artistId);
+
+            if (eventEntity == null || artist == null)
+            {
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Event or Artist not found.");
+                return response;
+            }
+
+            if (eventEntity.Artists.Any(a => a.ArtistId == artistId))
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("Artist is already linked to this event.");
+                return response;
+            }
+
+            eventEntity.Artists.Add(artist);
 
             try
             {
-                List<Artist> artists = await _context.Artists
-                    .Where(a => a.Events.Any(e => e.EventId == eventId))
-                    .ToListAsync();
-
-                List<ArtistDto> artistDtos = artists.Select(a => new ArtistDto
-                {
-                    ArtistId = a.ArtistId,
-                    FName = a.FName,
-                    LName = a.LName,
-                    Bio = a.Bio,
-                    EmailId = a.EmailId,
-                    PhoneNumber = a.PhoneNumber
-                }).ToList();
-
-                response.Success = true;
-                response.Data = artistDtos;
+                await _context.SaveChangesAsync();
+                response.Status = ServiceResponse.ServiceStatus.Success;
             }
             catch (Exception ex)
             {
-                response.Success = false;
-                response.Message = ex.Message;
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("An error occurred while linking the artist.");
+                response.Messages.Add(ex.Message);
             }
 
             return response;
         }
 
+        public async Task<ServiceResponse> UnlinkArtist(int eventId, int artistId)
+        {
+            ServiceResponse response = new();
 
+            var eventEntity = await _context.Events
+                .Include(e => e.Artists)
+                .FirstOrDefaultAsync(e => e.EventId == eventId);
+
+            if (eventEntity == null)
+            {
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Event not found.");
+                return response;
+            }
+
+            var artist = eventEntity.Artists.FirstOrDefault(a => a.ArtistId == artistId);
+            if (artist == null)
+            {
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Artist not linked to this event.");
+                return response;
+            }
+
+            eventEntity.Artists.Remove(artist);
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                response.Status = ServiceResponse.ServiceStatus.Success;
+            }
+            catch (Exception ex)
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("An error occurred while unlinking the artist.");
+                response.Messages.Add(ex.Message);
+            }
+
+            return response;
+        }
 
 
     }

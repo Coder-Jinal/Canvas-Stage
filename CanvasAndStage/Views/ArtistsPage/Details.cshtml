@@ -1,0 +1,51 @@
+﻿@model CanvasAndStage.Models.ArtistDto
+
+@{
+    ViewData["Title"] = "Artist Details";
+}
+
+<h2>@Model.FName @Model.LName</h2>
+
+<p><strong>Bio:</strong> @Model.Bio</p>
+<p><strong>Email:</strong> @Model.EmailId</p>
+<p><strong>Phone:</strong> @Model.PhoneNumber</p>
+
+<h3>Artworks (@Model.TotalArtworks)</h3>
+
+@if (Model.Artworks.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Artwork ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var artwork in Model.Artworks)
+            {
+                <tr>
+                    <td>@artwork.ArtworkId</td>
+                    <td>@artwork.Title</td>
+                    <td>@artwork.Description</td>
+                    <td>@artwork.Price.ToString("C2")</td>
+                    <td>
+                        <a asp-controller="ArtworksPage" asp-action="Details" asp-route-id="@artwork.ArtworkId" class="btn btn-info btn-sm">View Details</a>
+                        <a asp-controller="ArtworksPage" asp-action="Edit" asp-route-id="@artwork.ArtworkId" class="btn btn-warning btn-sm">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No artworks found.</p>
+}
+
+<a asp-action="List" class="btn btn-secondary">Back to List</a>
+<a asp-action="Edit" asp-route-id="@Model.ArtistId" class="btn btn-warning">Edit</a>
+<a asp-action="ConfirmDelete" asp-route-id="@Model.ArtistId" class="btn btn-danger">Delete</a>

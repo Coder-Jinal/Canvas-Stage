@@ -1,0 +1,46 @@
+﻿@model CanvasAndStage.Models.AddPurchaseDto
+@{
+    ViewData["Title"] = "Add Purchase";
+}
+
+<h2>Add Purchase</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label>Attendee</label>
+        <select asp-for="AttendeeId" class="form-control" required>
+            @foreach (var attendee in ViewBag.Attendees)
+            {
+                <option value="@attendee.AttendeeId">@attendee.FirstName @attendee.LastName</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Artwork</label>
+        <select asp-for="ArtworkId" class="form-control" required>
+            @foreach (var artwork in ViewBag.Artworks)
+            {
+                <option value="@artwork.ArtworkId">@artwork.Title</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Event</label>
+        <select asp-for="EventId" class="form-control" required>
+            @foreach (var ev in ViewBag.Events)
+            {
+                <option value="@ev.EventId">@ev.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TotalPrice"></label>
+        <input asp-for="TotalPrice" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a asp-action="List" class="btn btn-secondary">Cancel</a>
+</form>

@@ -7,10 +7,61 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CanvasAndStage.styles.css" asp-append-version="true" />
+
+    <style>
+
+        /* Header Styles */
+        .navbar {
+            background: linear-gradient(to right, #c084fc, #a855f7, #9333ea); 
+            padding: 12px 20px; 
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            padding: 8px 12px;
+        }
+
+            .navbar-nav .nav-link:hover {
+                background: rgba(255, 255, 255, 0.2); 
+                border-radius: 5px;
+            }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to right, #c084fc, #a855f7, #9333ea);
+            padding: 6px 0px;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1)
+        }
+        footer .container{
+            color: #ffffff;
+        }
+
+            footer a {
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CanvasAndStage</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -23,10 +74,25 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Swagger" asp-action="Index">API</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" href="/swagger" target="_blank">API</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="EventsPage" asp-action="List">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ArtistsPage" asp-action="List">Artists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="AttendeesPage" asp-action="List">Attendees</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ArtworksPage" asp-action="List">Artworks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PurchasesPage" asp-action="List">Purchases</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

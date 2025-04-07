@@ -1,0 +1,13 @@
+﻿@model CanvasAndStage.Models.AttendeeDto
+
+@{
+    ViewData["Title"] = "Delete Attendee";
+}
+
+<h2>Are you sure you want to delete "@Model.FirstName @Model.LastName"?</h2>
+<p>This action cannot be undone.</p>
+
+<form asp-action="Delete" asp-route-id="@Model.AttendeeId" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="List" class="btn btn-secondary">Cancel</a>
+</form>

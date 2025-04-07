@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CanvasAndStage.Models.ArtworkDto>
+
+@{
+    ViewData["Title"] = "All Artworks";
+}
+
+<h2>All Artworks</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Add">Add New Artwork</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Price</th>
+            <th>Times Purchased</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var artwork in Model)
+        {
+            <tr>
+                <td>@artwork.ArtworkId</td>
+                <td>@artwork.Title</td>
+                <td>@artwork.ArtistName</td>
+                <td>@artwork.Price.ToString("C2")</td>
+                <td>@artwork.TimesPurchased</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@artwork.ArtworkId" class="btn btn-sm btn-info">View Details</a>
+                    <a asp-action="Edit" asp-route-id="@artwork.ArtworkId" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="ConfirmDelete" asp-route-id="@artwork.ArtworkId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

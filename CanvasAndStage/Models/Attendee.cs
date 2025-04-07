@@ -17,7 +17,7 @@ namespace CanvasAndStage.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        public string ContactNumber   { get; set; }
+        public int ContactNumber   { get; set; }
 
         // one attendee can attend many events
         public ICollection<Event> Events { get; set; }
@@ -25,13 +25,12 @@ namespace CanvasAndStage.Models
         // one attendee can have multiple purchases
         public ICollection<Purchase> Purchases { get; set; }
 
-
-
     }
+
 
     public class AttendeeDto
     {
-        [Required]
+        [Key]
         public int AttendeeId { get; set; }
 
         [Required]
@@ -41,15 +40,43 @@ namespace CanvasAndStage.Models
         public string LastName { get; set; }
 
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
-        public string ContactNumber { get; set; }
+        public int ContactNumber { get; set; }
 
-        // List of event IDs the attendee is associated with
-        public List<int> EventIds { get; set; }
+        public List<string> EventNames { get; set; }
 
-        // List of purchase IDs the attendee is associated with
-        public List<int> PurchaseIds { get; set; }
+        public int TotalEvents { get; set; }
+
+        public float TotalPurchase { get; set; }
+
+        public int TotalArtworksPurchased { get; set; }
+
+        public List<string> ArtworkNames { get; set; }
+    }
+
+    public class AddAttendeeDto
+    {
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Email { get; set; }
+
+        public int ContactNumber { get; set; }
+    }
+
+    public class UpdateAttendeeDto
+    {
+        public int AttendeeId { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Email { get; set; }
+
+        public int ContactNumber { get; set; }
     }
 }

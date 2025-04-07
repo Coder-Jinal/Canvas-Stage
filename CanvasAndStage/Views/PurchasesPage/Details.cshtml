@@ -1,0 +1,33 @@
+﻿@model CanvasAndStage.Models.PurchaseDto
+@{
+    ViewData["Title"] = "Purchase Details";
+}
+
+<h2>Purchase Details</h2>
+
+<table class="table">
+    <tr>
+        <th>Artwork:</th>
+        <td>@Model.ArtworkName</td>
+    </tr>
+    <tr>
+        <th>Artist:</th>
+        <td>@Model.ArtistName</td>
+    </tr>
+    <tr>
+        <th>Attendee:</th>
+        <td>@Model.AttendeeName</td>
+    </tr>
+    <tr>
+        <th>Event:</th>
+        <td>@Model.EventName</td>
+    </tr>
+    <tr>
+        <th>Total Price:</th>
+        <td>@Model.TotalPrice.ToString("C2")</td>
+    </tr>
+</table>
+
+<a asp-action="List" class="btn btn-secondary">Back to List</a>
+<a asp-action="Edit" asp-route-id="@Model.PurchaseId" class="btn btn-warning">Edit</a>
+<a asp-action="ConfirmDelete" asp-route-id="@Model.PurchaseId" class="btn btn-danger">Delete</a>
