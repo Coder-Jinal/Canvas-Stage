@@ -27,8 +27,33 @@ namespace CanvasAndStage.Models
     {
         public int EventId { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
         public string Location { get; set; }
+        public string Description { get; set; }
         public DateOnly Date { get; set; }
+        public int TotalAttendees { get; set; }
+        public List<string> AttendeeNames { get; set; }
+        public int TotalArtists { get; set; }
+        public List<string> ArtistNames { get; set; }
+        public float TotalPurchase { get; set; }
+    }
+
+    public class AddEventDto
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public string Description { get; set; }
+        public DateOnly Date { get; set; }
+
+    }
+
+
+    public class UpdateEventDto
+    {
+        public int EventId { get; set; }
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public string Description { get; set; }
+        public DateOnly Date { get; set; }
+
     }
 }

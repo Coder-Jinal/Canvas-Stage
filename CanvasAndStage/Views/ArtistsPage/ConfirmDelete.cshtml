@@ -1,0 +1,10 @@
+﻿@model CanvasAndStage.Models.ArtistDto
+
+<h2>Are you sure you want to delete "@Model.FName @Model.LName"?</h2>
+<p>This action cannot be undone.</p>
+
+<form asp-action="Delete" asp-route-id="@Model.ArtistId"  method="post">
+    <input type="hidden" asp-for="ArtistId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="List" class="btn btn-secondary">Cancel</a>
+</form>

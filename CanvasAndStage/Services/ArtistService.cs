@@ -1,8 +1,9 @@
-﻿using CanvasAndStage.Interfaces;
+﻿using CanvasAndStage.Data;
+using CanvasAndStage.Interfaces;
 using CanvasAndStage.Models;
-using CanvasAndStage.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CanvasAndStage.Services
@@ -18,48 +19,106 @@ namespace CanvasAndStage.Services
 
         public async Task<IEnumerable<ArtistDto>> ListArtists()
         {
-            List<Artist> artists = await _context.Artists.ToListAsync();
-            List<ArtistDto> artistDtos = new();
+            var artists = await _context.Artists
+                .Include(a => a.Artworks)
+                .ToListAsync();
 
-            foreach (Artist artist in artists)
+            if (!artists.Any()) return [];
+
+            return artists.Select(a => new ArtistDto
             {
-                artistDtos.Add(new ArtistDto()
-                {
-                    ArtistId = artist.ArtistId,
-                    FName = artist.FName,
-                    LName = artist.LName,
-                    Bio = artist.Bio,
-                    EmailId = artist.EmailId,
-                    PhoneNumber = artist.PhoneNumber
-                });
-            }
+                ArtistId = a.ArtistId,
+                FName = a.FName,
+                LName = a.LName,
+                Bio = a.Bio,
+                EmailId = a.EmailId,
+                PhoneNumber = a.PhoneNumber,
+                TotalArtworks = a.Artworks.Count,
 
-            return artistDtos;
+                Artworks = a.Artworks.Select(art => new ArtworkDto
+                {
+                    ArtworkId = art.ArtworkId,
+                    Title = art.Title,
+                    Description = art.Description,
+                    Price = art.Price
+                }).ToList()
+            }).ToList();
         }
+
 
         public async Task<ArtistDto?> FindArtist(int id)
         {
-            var artist = await _context.Artists.FirstOrDefaultAsync(a => a.ArtistId == id);
+            var artist = await _context.Artists
+                .Include(a => a.Artworks)
+                .FirstOrDefaultAsync(a => a.ArtistId == id);
 
             if (artist == null) return null;
 
-            return new ArtistDto()
+            return new ArtistDto
             {
                 ArtistId = artist.ArtistId,
                 FName = artist.FName,
                 LName = artist.LName,
                 Bio = artist.Bio,
                 EmailId = artist.EmailId,
-                PhoneNumber = artist.PhoneNumber
+                PhoneNumber = artist.PhoneNumber,
+                TotalArtworks = artist.Artworks.Count,
+
+              
+                Artworks = artist.Artworks.Select(a => new ArtworkDto
+                {
+                    ArtworkId = a.ArtworkId,
+                    Title = a.Title,
+                    Description = a.Description,
+                    Price = a.Price
+                }).ToList()
             };
         }
 
-        public async Task<ServiceResponse> UpdateArtist(ArtistDto artistDto)
+
+        public async Task<ServiceResponse> AddArtist(AddArtistDto dto)
         {
             ServiceResponse response = new();
 
-            var artist = await _context.Artists.FindAsync(artistDto.ArtistId);
+            Artist newArtist = new()
+            {
+                FName = dto.FName,
+                LName = dto.LName,
+                Bio = dto.Bio,
+                EmailId = dto.EmailId,
+                PhoneNumber = dto.PhoneNumber
+            };
 
+            try
+            {
+                _context.Artists.Add(newArtist);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("Error while adding the artist.");
+                response.Messages.Add(ex.Message);
+                return response;
+            }
+
+            response.Status = ServiceResponse.ServiceStatus.Created;
+            response.CreatedId = newArtist.ArtistId;
+            return response;
+        }
+
+        public async Task<ServiceResponse> UpdateArtist(int id, UpdateArtistDto dto)
+        {
+            ServiceResponse response = new();
+
+            if (id != dto.ArtistId)
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("Artist ID mismatch.");
+                return response;
+            }
+
+            var artist = await _context.Artists.FindAsync(id);
             if (artist == null)
             {
                 response.Status = ServiceResponse.ServiceStatus.NotFound;
@@ -67,56 +126,25 @@ namespace CanvasAndStage.Services
                 return response;
             }
 
-            artist.FName = artistDto.FName;
-            artist.LName = artistDto.LName;
-            artist.Bio = artistDto.Bio;
-            artist.EmailId = artistDto.EmailId;
-            artist.PhoneNumber = artistDto.PhoneNumber;
+            artist.FName = dto.FName;
+            artist.LName = dto.LName;
+            artist.Bio = dto.Bio;
+            artist.EmailId = dto.EmailId;
+            artist.PhoneNumber = dto.PhoneNumber;
 
             try
             {
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error updating the artist.");
-                return response;
-            }
-
-            response.Status = ServiceResponse.ServiceStatus.Updated;
-            return response;
-        }
-
-        public async Task<ServiceResponse> AddArtist(ArtistDto artistDto)
-        {
-            ServiceResponse response = new();
-
-            Artist artist = new()
-            {
-                FName = artistDto.FName,
-                LName = artistDto.LName,
-                Bio = artistDto.Bio,
-                EmailId = artistDto.EmailId,
-                PhoneNumber = artistDto.PhoneNumber
-            };
-
-            try
-            {
-                await _context.Artists.AddAsync(artist);
-                await _context.SaveChangesAsync();
-
-                response.Status = ServiceResponse.ServiceStatus.Created;
-                response.CreatedId = artist.ArtistId;
             }
             catch (Exception ex)
             {
                 response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error adding the artist.");
+                response.Messages.Add("Error while updating the artist.");
                 response.Messages.Add(ex.Message);
                 return response;
             }
 
+            response.Status = ServiceResponse.ServiceStatus.Updated;
             return response;
         }
 
@@ -140,126 +168,13 @@ namespace CanvasAndStage.Services
             catch (Exception ex)
             {
                 response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error deleting the artist.");
+                response.Messages.Add("Error encountered while deleting the artist.");
+                response.Messages.Add(ex.Message);
                 return response;
             }
 
             response.Status = ServiceResponse.ServiceStatus.Deleted;
             return response;
         }
-
-        public async Task<ServiceResponse> LinkArtworkToArtist(int artistId, int artworkId)
-        {
-            ServiceResponse serviceResponse = new();
-
-            // Find the artist and the artwork
-            Artist? artist = await _context.Artists
-                .Include(a => a.Artworks)
-                .Where(a => a.ArtistId == artistId)
-                .FirstOrDefaultAsync();
-            Artwork? artwork = await _context.Artworks.FindAsync(artworkId);
-
-            if (artist == null || artwork == null)
-            {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                if (artist == null) serviceResponse.Messages.Add("Artist was not found.");
-                if (artwork == null) serviceResponse.Messages.Add("Artwork was not found.");
-                return serviceResponse;
-            }
-
-            try
-            {
-                // Link the artwork to the artist
-                artist.Artworks.Add(artwork);
-                await _context.SaveChangesAsync();
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Created;
-            }
-            catch (Exception ex)
-            {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                serviceResponse.Messages.Add("There was an issue linking the artwork to the artist.");
-                serviceResponse.Messages.Add(ex.Message);
-            }
-
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse> UnlinkArtworkFromArtist(int artistId, int artworkId)
-        {
-            ServiceResponse serviceResponse = new();
-
-            // Find the artist and the artwork
-            Artist? artist = await _context.Artists
-                .Include(a => a.Artworks)
-                .Where(a => a.ArtistId == artistId)
-                .FirstOrDefaultAsync();
-            Artwork? artwork = await _context.Artworks.FindAsync(artworkId);
-
-            if (artist == null || artwork == null)
-            {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                if (artist == null) serviceResponse.Messages.Add("Artist was not found.");
-                if (artwork == null) serviceResponse.Messages.Add("Artwork was not found.");
-                return serviceResponse;
-            }
-
-            try
-            {
-                // Unlink the artwork from the artist
-                artist.Artworks.Remove(artwork);
-                await _context.SaveChangesAsync();
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Deleted;
-            }
-            catch (Exception ex)
-            {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                serviceResponse.Messages.Add("There was an issue unlinking the artwork from the artist.");
-                serviceResponse.Messages.Add(ex.Message);
-            }
-
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse> ListArtworksForArtist(int artistId)
-        {
-            var response = new ServiceResponse();
-
-            try
-            {
-                // Check if artist exists
-                var artistExists = await _context.Artists.AnyAsync(a => a.ArtistId == artistId);
-                if (!artistExists)
-                {
-                    response.Success = false;
-                    response.Message = "Artist not found.";
-                    return response;
-                }
-
-                // Fetch artworks for the given artist
-                var artworks = await _context.Artworks
-                    .Where(a => a.ArtistId == artistId) // Filter artworks by artistId
-                    .Select(a => new ArtworkDto
-                    {
-                        ArtworkId = a.ArtworkId,
-                        Title = a.Title,
-                        Description = a.Description,
-                        Date = a.Date,
-                        Price = a.Price,
-                        ArtistId = a.ArtistId
-                    })
-                    .ToListAsync(); // Execute at database level
-
-                response.Success = true;
-                response.Data = artworks;
-            }
-            catch (Exception ex)
-            {
-                response.Success = false;
-                response.Message = ex.Message;
-            }
-
-            return response;
-        }
-
     }
 }

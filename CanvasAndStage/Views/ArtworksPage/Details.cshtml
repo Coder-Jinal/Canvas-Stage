@@ -1,0 +1,20 @@
+﻿@model CanvasAndStage.Models.ArtworkDto
+
+<h2>@Model.Title</h2>
+
+<p><strong>Description:</strong> @Model.Description</p>
+<p><strong>Price:</strong> @Model.Price.ToString("C2")</p>
+<p><strong>Artist:</strong> @Model.ArtistName</p>
+<p><strong>Times Purchased:</strong> @Model.TimesPurchased</p>
+
+<h3>Purchased By:</h3>
+<ul>
+    @foreach (var attendee in Model.AttendeePurchased)
+    {
+        <li>@attendee</li>
+    }
+</ul>
+
+<a asp-action="List" class="btn btn-secondary">Back to List</a>
+<a asp-action="Edit" asp-route-id="@Model.ArtworkId" class="btn btn-warning">Edit</a>
+<a asp-action="ConfirmDelete" asp-route-id="@Model.ArtworkId" class="btn btn-danger">Delete</a>

@@ -1,34 +1,24 @@
 [
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtistController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsController",
     "Method": "AddArtist",
-    "RelativePath": "api/Artist/Add",
+    "RelativePath": "api/Artists/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "artistDto",
-        "Type": "CanvasAndStage.Models.ArtistDto",
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.AddArtistDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "CanvasAndStage.Models.ArtistDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtistController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsController",
     "Method": "DeleteArtist",
-    "RelativePath": "api/Artist/Delete/{id}",
+    "RelativePath": "api/Artists/Delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -42,9 +32,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtistController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsController",
     "Method": "FindArtist",
-    "RelativePath": "api/Artist/Find/{id}",
+    "RelativePath": "api/Artists/Find/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -68,30 +58,9 @@
     ]
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtistController",
-    "Method": "LinkArtwork",
-    "RelativePath": "api/Artist/LinkArtwork",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "artistId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "artworkId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CanvasAndStage.Controllers.ArtistController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsController",
     "Method": "ListArtists",
-    "RelativePath": "api/Artist/List",
+    "RelativePath": "api/Artists/List",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -109,46 +78,9 @@
     ]
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtistController",
-    "Method": "ListArtworksForArtist",
-    "RelativePath": "api/Artist/ListArtworksForArtist/{artistId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "artistId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CanvasAndStage.Controllers.ArtistController",
-    "Method": "UnlinkArtwork",
-    "RelativePath": "api/Artist/UnlinkArtwork",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "artistId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "artworkId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CanvasAndStage.Controllers.ArtistController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsController",
     "Method": "UpdateArtist",
-    "RelativePath": "api/Artist/Update/{id}",
+    "RelativePath": "api/Artists/Update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -159,43 +91,33 @@
         "IsRequired": true
       },
       {
-        "Name": "artistDto",
-        "Type": "CanvasAndStage.Models.ArtistDto",
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.UpdateArtistDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtworkController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksController",
     "Method": "AddArtwork",
-    "RelativePath": "api/Artwork/Add",
+    "RelativePath": "api/Artworks/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "artworkDto",
-        "Type": "CanvasAndStage.Models.ArtworkDto",
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.AddArtworkDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "CanvasAndStage.Models.ArtworkDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtworkController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksController",
     "Method": "DeleteArtwork",
-    "RelativePath": "api/Artwork/Delete/{id}",
+    "RelativePath": "api/Artworks/Delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -209,9 +131,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtworkController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksController",
     "Method": "FindArtwork",
-    "RelativePath": "api/Artwork/Find/{id}",
+    "RelativePath": "api/Artworks/Find/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -235,9 +157,9 @@
     ]
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtworkController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksController",
     "Method": "ListArtworks",
-    "RelativePath": "api/Artwork/List",
+    "RelativePath": "api/Artworks/List",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -255,9 +177,9 @@
     ]
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.ArtworkController",
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksController",
     "Method": "UpdateArtwork",
-    "RelativePath": "api/Artwork/Update/{id}",
+    "RelativePath": "api/Artworks/Update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -268,43 +190,33 @@
         "IsRequired": true
       },
       {
-        "Name": "artworkDto",
-        "Type": "CanvasAndStage.Models.ArtworkDto",
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.UpdateArtworkDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.AttendeeController",
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesController",
     "Method": "AddAttendee",
-    "RelativePath": "api/Attendee/Add",
+    "RelativePath": "api/Attendees/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "attendeeDto",
-        "Type": "CanvasAndStage.Models.AttendeeDto",
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.AddAttendeeDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "CanvasAndStage.Models.AttendeeDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.AttendeeController",
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesController",
     "Method": "DeleteAttendee",
-    "RelativePath": "api/Attendee/Delete/{id}",
+    "RelativePath": "api/Attendees/Delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -318,9 +230,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.AttendeeController",
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesController",
     "Method": "FindAttendee",
-    "RelativePath": "api/Attendee/Find/{id}",
+    "RelativePath": "api/Attendees/Find/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -344,9 +256,9 @@
     ]
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.AttendeeController",
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesController",
     "Method": "ListAttendees",
-    "RelativePath": "api/Attendee/List",
+    "RelativePath": "api/Attendees/List",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -364,25 +276,9 @@
     ]
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.AttendeeController",
-    "Method": "ListEventsForAttendee",
-    "RelativePath": "api/Attendee/ListEventsForAttendee/{attendeeId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "attendeeId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CanvasAndStage.Controllers.AttendeeController",
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesController",
     "Method": "UpdateAttendee",
-    "RelativePath": "api/Attendee/Update/{id}",
+    "RelativePath": "api/Attendees/Update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -393,43 +289,33 @@
         "IsRequired": true
       },
       {
-        "Name": "attendeeDto",
-        "Type": "CanvasAndStage.Models.AttendeeDto",
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.UpdateAttendeeDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "AddEvent",
-    "RelativePath": "api/Event/Add",
+    "RelativePath": "api/Events/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventDto",
-        "Type": "CanvasAndStage.Models.EventDto",
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.AddEventDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "CanvasAndStage.Models.EventDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "DeleteEvent",
-    "RelativePath": "api/Event/Delete/{id}",
+    "RelativePath": "api/Events/Delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -443,9 +329,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "FindEvent",
-    "RelativePath": "api/Event/Find/{id}",
+    "RelativePath": "api/Events/Find/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -469,51 +355,41 @@
     ]
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "LinkArtist",
-    "RelativePath": "api/Event/LinkArtist",
+    "RelativePath": "api/Events/LinkArtist",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "artistId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "CanvasAndStage.Controllers.LinkArtistDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "LinkAttendee",
-    "RelativePath": "api/Event/LinkAttendee",
+    "RelativePath": "api/Events/LinkAttendee",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "attendeeId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "CanvasAndStage.Controllers.LinkAttendeeDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "ListEvents",
-    "RelativePath": "api/Event/List",
+    "RelativePath": "api/Events/List",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -531,83 +407,41 @@
     ]
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
-    "Method": "ListArtistsForEvent",
-    "RelativePath": "api/Event/ListArtistsForEvent/{eventId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
-    "Method": "ListAttendeesForEvent",
-    "RelativePath": "api/Event/ListAttendeesForEvent/{eventId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "UnlinkArtist",
-    "RelativePath": "api/Event/UnlinkArtist",
-    "HttpMethod": "DELETE",
+    "RelativePath": "api/Events/UnlinkArtist",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "artistId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "CanvasAndStage.Controllers.LinkArtistDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "UnlinkAttendee",
-    "RelativePath": "api/Event/UnlinkAttendee",
-    "HttpMethod": "DELETE",
+    "RelativePath": "api/Events/UnlinkAttendee",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "attendeeId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "CanvasAndStage.Controllers.LinkAttendeeDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CanvasAndStage.Controllers.EventController",
+    "ContainingType": "CanvasAndStage.Controllers.EventsController",
     "Method": "UpdateEvent",
-    "RelativePath": "api/Event/Update/{id}",
+    "RelativePath": "api/Events/Update/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -618,11 +452,1044 @@
         "IsRequired": true
       },
       {
-        "Name": "eventDto",
-        "Type": "CanvasAndStage.Models.EventDto",
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.UpdateEventDto",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesController",
+    "Method": "AddPurchase",
+    "RelativePath": "api/Purchases/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.AddPurchaseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesController",
+    "Method": "DeletePurchase",
+    "RelativePath": "api/Purchases/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesController",
+    "Method": "FindPurchase",
+    "RelativePath": "api/Purchases/Find/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CanvasAndStage.Models.PurchaseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesController",
+    "Method": "ListPurchases",
+    "RelativePath": "api/Purchases/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CanvasAndStage.Models.PurchaseDto, CanvasAndStage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesController",
+    "Method": "UpdatePurchase",
+    "RelativePath": "api/Purchases/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "CanvasAndStage.Models.UpdatePurchaseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "Index",
+    "RelativePath": "ArtistsPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "Add",
+    "RelativePath": "ArtistsPage/Add",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "Add",
+    "RelativePath": "ArtistsPage/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "EmailId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "ConfirmDelete",
+    "RelativePath": "ArtistsPage/ConfirmDelete/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "Delete",
+    "RelativePath": "ArtistsPage/Delete/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "Details",
+    "RelativePath": "ArtistsPage/Details/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "Edit",
+    "RelativePath": "ArtistsPage/Edit/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "Edit",
+    "RelativePath": "ArtistsPage/Edit/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ArtistId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "FName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "EmailId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtistsPageController",
+    "Method": "List",
+    "RelativePath": "ArtistsPage/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "Index",
+    "RelativePath": "ArtworksPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "Add",
+    "RelativePath": "ArtworksPage/Add",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "Add",
+    "RelativePath": "ArtworksPage/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArtistId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "ConfirmDelete",
+    "RelativePath": "ArtworksPage/ConfirmDelete/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "Delete",
+    "RelativePath": "ArtworksPage/Delete/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "Details",
+    "RelativePath": "ArtworksPage/Details/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "Edit",
+    "RelativePath": "ArtworksPage/Edit/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "Edit",
+    "RelativePath": "ArtworksPage/Edit/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ArtworkId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Single",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArtistId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.ArtworksPageController",
+    "Method": "List",
+    "RelativePath": "ArtworksPage/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "Index",
+    "RelativePath": "AttendeesPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "Add",
+    "RelativePath": "AttendeesPage/Add",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "Add",
+    "RelativePath": "AttendeesPage/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "ConfirmDelete",
+    "RelativePath": "AttendeesPage/ConfirmDelete/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "Delete",
+    "RelativePath": "AttendeesPage/Delete/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "Details",
+    "RelativePath": "AttendeesPage/Details/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "Edit",
+    "RelativePath": "AttendeesPage/Edit/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "Edit",
+    "RelativePath": "AttendeesPage/Edit/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "AttendeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.AttendeesPageController",
+    "Method": "List",
+    "RelativePath": "AttendeesPage/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "Index",
+    "RelativePath": "EventsPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "Add",
+    "RelativePath": "EventsPage/Add",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "Add",
+    "RelativePath": "EventsPage/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "ConfirmDelete",
+    "RelativePath": "EventsPage/ConfirmDelete/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "Delete",
+    "RelativePath": "EventsPage/Delete/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "Details",
+    "RelativePath": "EventsPage/Details/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "Edit",
+    "RelativePath": "EventsPage/Edit/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "Edit",
+    "RelativePath": "EventsPage/Edit/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "LinkArtist",
+    "RelativePath": "EventsPage/LinkArtist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArtistId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "LinkAttendee",
+    "RelativePath": "EventsPage/LinkAttendee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AttendeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "List",
+    "RelativePath": "EventsPage/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "UnlinkArtist",
+    "RelativePath": "EventsPage/UnlinkArtist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArtistId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.EventsPageController",
+    "Method": "UnlinkAttendee",
+    "RelativePath": "EventsPage/UnlinkAttendee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AttendeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "Index",
+    "RelativePath": "PurchasesPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "Add",
+    "RelativePath": "PurchasesPage/Add",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "Add",
+    "RelativePath": "PurchasesPage/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AttendeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArtworkId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TotalPrice",
+        "Type": "System.Single",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "ConfirmDelete",
+    "RelativePath": "PurchasesPage/ConfirmDelete/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "Delete",
+    "RelativePath": "PurchasesPage/Delete/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "Details",
+    "RelativePath": "PurchasesPage/Details/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "Edit",
+    "RelativePath": "PurchasesPage/Edit/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "Edit",
+    "RelativePath": "PurchasesPage/Edit/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "PurchaseId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AttendeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArtworkId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TotalPrice",
+        "Type": "System.Single",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CanvasAndStage.Controllers.PurchasesPageController",
+    "Method": "List",
+    "RelativePath": "PurchasesPage/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

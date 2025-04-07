@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CanvasAndStage.Models.EventDto>
+@{
+    ViewData["Title"] = "All Events";
+}
+
+<h2>All Events</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Add">Add New Event</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Attendees</th>
+            <th>Artists</th>
+            <th>Total Purchases</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.EventId</td>
+                <td>@e.Name</td>
+                <td>@e.Location</td>
+                <td>@e.Date.ToShortDateString()</td>
+                <td>@e.TotalAttendees</td>
+                <td>@e.TotalArtists</td>
+                <td>@e.TotalPurchase.ToString("C2")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@e.EventId" class="btn btn-sm btn-info">View Details</a>
+                    <a asp-action="Edit" asp-route-id="@e.EventId" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="ConfirmDelete" asp-route-id="@e.EventId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

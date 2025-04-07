@@ -1,0 +1,168 @@
+﻿@model CanvasAndStage.Models.ViewModels.EventDetailsViewModel
+
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<h2>@Model.Event.Name</h2>
+<p><strong>Location:</strong> @Model.Event.Location</p>
+<p><strong>Date:</strong> @Model.Event.Date.ToShortDateString()</p>
+<p><strong>Description:</strong> @Model.Event.Description</p>
+
+<hr />
+
+<!-- Artists Section -->
+<h3>Artists Linked to Event</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Artist ID</th>
+            <th>Artist Name</th>
+            <th>Artworks</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var artist in Model.Artists)
+        {
+            <tr>
+                <td>@artist.ArtistId</td>
+                <td>@artist.FName @artist.LName</td>
+                <td>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Artwork ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var artwork in artist.Artworks)
+                            {
+                                <tr>
+                                    <td>@artwork.ArtworkId</td>
+                                    <td>@artwork.Title</td>
+                                    <td>@artwork.Description</td>
+                                    <td>@artwork.Price.ToString("C2")</td>
+                                    <td>
+                                        <a asp-controller="ArtworksPage" asp-action="Details" asp-route-id="@artwork.ArtworkId" class="btn btn-info btn-sm">View</a>
+                                        <a asp-controller="ArtworksPage" asp-action="Edit" asp-route-id="@artwork.ArtworkId" class="btn btn-warning btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <form asp-action="UnlinkArtist" method="post">
+                        <input type="hidden" name="eventId" value="@Model.Event.EventId" />
+                        <input type="hidden" name="artistId" value="@artist.ArtistId" />
+                        <button type="submit" class="btn btn-danger">Unlink</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Link a New Artist -->
+<h3>Link a New Artist</h3>
+<form asp-action="LinkArtist" method="post">
+    <input type="hidden" name="eventId" value="@Model.Event.EventId" />
+    <select name="artistId" class="form-control">
+        @foreach (var artist in Model.UnlinkedArtists)
+        {
+            <option value="@artist.ArtistId">@artist.FName @artist.LName</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-success mt-2">Link Artist</button>
+</form>
+
+<hr />
+
+<!-- Attendees Section -->
+<h3>Attendees Linked to Event</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Attendee ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var attendee in Model.Attendees)
+        {
+            <tr>
+                <td>@attendee.AttendeeId</td>
+                <td>@attendee.FirstName @attendee.LastName</td>
+                <td>@attendee.Email</td>
+                <td>@attendee.ContactNumber</td>
+                <td>
+                    <form asp-action="UnlinkAttendee" method="post">
+                        <input type="hidden" name="eventId" value="@Model.Event.EventId" />
+                        <input type="hidden" name="attendeeId" value="@attendee.AttendeeId" />
+                        <button type="submit" class="btn btn-danger">Unlink</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Link a New Attendee -->
+<h3>Link a New Attendee</h3>
+<form asp-action="LinkAttendee" method="post">
+    <input type="hidden" name="eventId" value="@Model.Event.EventId" />
+    <select name="attendeeId" class="form-control">
+        @foreach (var attendee in Model.UnlinkedAttendees)
+        {
+            <option value="@attendee.AttendeeId">@attendee.FirstName @attendee.LastName</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-success mt-2">Link Attendee</button>
+</form>
+
+<hr />
+
+<!-- Purchases Section -->
+<h3>Purchase History</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Purchase ID</th>
+            <th>Artwork Name</th>
+            <th>Artist Name</th>
+            <th>Buyer (Attendee)</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var purchase in Model.Purchases)
+        {
+            <tr>
+                <td>@purchase.PurchaseId</td>
+                <td>@purchase.ArtworkName</td>
+                <td>@purchase.ArtistName</td>
+                <td>@purchase.AttendeeName</td>
+                <td>@purchase.TotalPrice.ToString("C2")</td>
+                <td>
+                    <a asp-controller="PurchasesPage" asp-action="Details" asp-route-id="@purchase.PurchaseId" class="btn btn-info btn-sm">View Details</a>
+                    <a asp-controller="PurchasesPage" asp-action="Edit" asp-route-id="@purchase.PurchaseId" class="btn btn-warning btn-sm">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<a asp-action="List" class="btn btn-secondary">Back to List</a>
+<a asp-action="Edit" asp-route-id="@Model.Event.EventId" class="btn btn-warning">Edit</a>
+<a asp-action="ConfirmDelete" asp-route-id="@Model.Event.EventId" class="btn btn-danger">Delete</a>

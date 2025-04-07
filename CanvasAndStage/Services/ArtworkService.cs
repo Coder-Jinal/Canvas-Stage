@@ -2,6 +2,9 @@
 using CanvasAndStage.Interfaces;
 using CanvasAndStage.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CanvasAndStage.Services
 {
@@ -16,51 +19,104 @@ namespace CanvasAndStage.Services
 
         public async Task<IEnumerable<ArtworkDto>> ListArtworks()
         {
-            List<Artwork> artworks = await _context.Artworks.Include(a => a.Artist).ToListAsync();
-            List<ArtworkDto> artworkDtos = new();
+            var artworks = await _context.Artworks
+                .Include(a => a.Artist)
+                .Include(a => a.Purchases)
+                .ThenInclude(p => p.Attendee)
+                .ToListAsync();
 
-            foreach (Artwork artwork in artworks)
+            if (!artworks.Any()) return [];
+
+            return artworks.Select(a => new ArtworkDto
             {
-                artworkDtos.Add(new ArtworkDto()
-                {
-                    ArtworkId = artwork.ArtworkId,
-                    Title = artwork.Title,
-                    Description = artwork.Description,
-                    Date = artwork.Date,
-                    Price = artwork.Price,
-                    ArtistId = artwork.ArtistId
-                    //FName = artwork.Artist.FName
-                });
-            }
-
-            return artworkDtos;
+                ArtworkId = a.ArtworkId,
+                Title = a.Title,
+                Description = a.Description,
+                Date = a.Date,
+                Price = a.Price,
+                TotalPriceWithTax = a.Price * 1.10f, // Example: Adding 10% tax
+                ArtistName = $"{a.Artist.FName} {a.Artist.LName}",
+                TimesPurchased = a.Purchases.Count,
+                AttendeePurchased = a.Purchases.Select(p => $"{p.Attendee.FirstName} {p.Attendee.LastName}").ToList()
+            }).ToList();
         }
 
         public async Task<ArtworkDto?> FindArtwork(int id)
         {
-            var artwork = await _context.Artworks.Include(a => a.Artist)
-                                                 .FirstOrDefaultAsync(a => a.ArtworkId == id);
+            var artwork = await _context.Artworks
+                .Include(a => a.Artist)
+                .Include(a => a.Purchases)
+                .ThenInclude(p => p.Attendee)
+                .FirstOrDefaultAsync(a => a.ArtworkId == id);
 
             if (artwork == null) return null;
 
-            return new ArtworkDto()
+            return new ArtworkDto
             {
                 ArtworkId = artwork.ArtworkId,
                 Title = artwork.Title,
                 Description = artwork.Description,
                 Date = artwork.Date,
                 Price = artwork.Price,
-                ArtistId = artwork.ArtistId
-                //FName = artwork.Artist.FName
+                TotalPriceWithTax = artwork.Price * 1.10f, // Example: Adding 10% tax
+                ArtistName = $"{artwork.Artist.FName} {artwork.Artist.LName}",
+                TimesPurchased = artwork.Purchases.Count,
+                AttendeePurchased = artwork.Purchases.Select(p => $"{p.Attendee.FirstName} {p.Attendee.LastName}").ToList()
             };
         }
 
-        public async Task<ServiceResponse> UpdateArtwork(ArtworkDto artworkDto)
+        public async Task<ServiceResponse> AddArtwork(AddArtworkDto dto)
         {
             ServiceResponse response = new();
 
-            var artwork = await _context.Artworks.FindAsync(artworkDto.ArtworkId);
+            var artist = await _context.Artists.FindAsync(dto.ArtistId);
+            if (artist == null)
+            {
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Artist not found.");
+                return response;
+            }
 
+            Artwork newArtwork = new()
+            {
+                Title = dto.Title,
+                Description = dto.Description,
+                Date = dto.Date,
+                Price = dto.Price,
+                ArtistId = dto.ArtistId
+            };
+
+            try
+            {
+                _context.Artworks.Add(newArtwork);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("Error while adding the artwork.");
+                response.Messages.Add(ex.Message);
+                return response;
+            }
+
+            response.Status = ServiceResponse.ServiceStatus.Created;
+            response.CreatedId = newArtwork.ArtworkId;
+            return response;
+        }
+
+
+        public async Task<ServiceResponse> UpdateArtwork(int id, UpdateArtworkDto dto)
+        {
+            ServiceResponse response = new();
+
+            if (id != dto.ArtworkId)
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add("Artwork ID mismatch.");
+                return response;
+            }
+
+            var artwork = await _context.Artworks.FindAsync(id);
             if (artwork == null)
             {
                 response.Status = ServiceResponse.ServiceStatus.NotFound;
@@ -68,20 +124,28 @@ namespace CanvasAndStage.Services
                 return response;
             }
 
-            artwork.Title = artworkDto.Title;
-            artwork.Description = artworkDto.Description;
-            artwork.Date = artworkDto.Date;
-            artwork.Price = artworkDto.Price;
-            artwork.ArtistId = artworkDto.ArtistId;
+            var artist = await _context.Artists.FindAsync(dto.ArtistId);
+            if (artist == null)
+            {
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Selected artist not found.");
+                return response;
+            }
 
+            artwork.Title = dto.Title;
+            artwork.Description = dto.Description;
+            artwork.Date = dto.Date;
+            artwork.Price = dto.Price;
+            artwork.ArtistId = dto.ArtistId; 
             try
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
                 response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error updating the artwork.");
+                response.Messages.Add("Error while updating the artwork.");
+                response.Messages.Add(ex.Message);
                 return response;
             }
 
@@ -89,41 +153,6 @@ namespace CanvasAndStage.Services
             return response;
         }
 
-        public async Task<ServiceResponse> AddArtwork(ArtworkDto artworkDto)
-        {
-            ServiceResponse response = new();
-
-            Artwork artwork = new()
-            {
-                Title = artworkDto.Title,
-                Description = artworkDto.Description,
-                Date = artworkDto.Date,
-                Price = artworkDto.Price,
-                ArtistId = artworkDto.ArtistId
-            };
-
-            try
-            {
-                await _context.Artworks.AddAsync(artwork);
-                await _context.SaveChangesAsync();
-
-                response.Status = ServiceResponse.ServiceStatus.Created;
-                response.CreatedId = artwork.ArtworkId;
-            }
-            catch (Exception ex)
-            {
-                response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error adding the artwork.");
-                response.Messages.Add(ex.Message);
-                if (ex.InnerException != null)
-                {
-                    response.Messages.Add("Inner exception: " + ex.InnerException.Message);
-                }
-                return response;
-            }
-
-            return response;
-        }
 
         public async Task<ServiceResponse> DeleteArtwork(int id)
         {
@@ -145,7 +174,8 @@ namespace CanvasAndStage.Services
             catch (Exception ex)
             {
                 response.Status = ServiceResponse.ServiceStatus.Error;
-                response.Messages.Add("Error deleting the artwork.");
+                response.Messages.Add("Error encountered while deleting the artwork.");
+                response.Messages.Add(ex.Message);
                 return response;
             }
 

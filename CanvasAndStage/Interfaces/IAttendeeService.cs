@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using CanvasAndStage.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using CanvasAndStage.Models;
 
 namespace CanvasAndStage.Interfaces
 {
@@ -8,9 +8,8 @@ namespace CanvasAndStage.Interfaces
     {
         Task<IEnumerable<AttendeeDto>> ListAttendees();
         Task<AttendeeDto?> FindAttendee(int id);
-        Task<ServiceResponse> UpdateAttendee(AttendeeDto attendeeDto);
-        Task<ServiceResponse> AddAttendee(AttendeeDto attendeeDto);
+        Task<ServiceResponse> AddAttendee(AddAttendeeDto dto);
+        Task<ServiceResponse> UpdateAttendee(int id, UpdateAttendeeDto dto);
         Task<ServiceResponse> DeleteAttendee(int id);
-        Task<ServiceResponse> ListEventsForAttendee(int attendeeId);
     }
 }

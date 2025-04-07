@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CanvasAndStage.Models.PurchaseDto>
+@{
+    ViewData["Title"] = "All Purchases";
+}
+
+<h2>All Purchases</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Add">Add New Purchase</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Artwork</th>
+            <th>Artist</th>
+            <th>Attendee</th>
+            <th>Event</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ArtworkName</td>
+                <td>@p.ArtistName</td>
+                <td>@p.AttendeeName</td>
+                <td>@p.EventName</td>
+                <td>@p.TotalPrice.ToString("C2")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@p.PurchaseId" class="btn btn-sm btn-info">View Details</a>
+                    <a asp-action="Edit" asp-route-id="@p.PurchaseId" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="ConfirmDelete" asp-route-id="@p.PurchaseId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
