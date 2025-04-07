@@ -59,5 +59,5 @@ One of the core challenges was building a multi-entity CRUD system that accurate
 
 ---
 **Work Done By**:
-1. Jinal Patel: Models, Page Controllers, Views and Styling.
-2. Isha Shah: API Controllers, Interfaces, Services and Readme File.
+1. Jinal Patel: Models, Page Controllers, Views and Styling, Extra Feature.
+2. Isha Shah: API Controllers, Interfaces, Services and Readme File, Extra Feature.
