@@ -1,4 +1,5 @@
 ﻿using CanvasAndStage.Models;
+using CanvasAndStage.Models.ViewModels;
 
 public interface IArtworkService
 {
@@ -7,4 +8,5 @@ public interface IArtworkService
     Task<ServiceResponse> AddArtwork(AddArtworkDto dto);  
     Task<ServiceResponse> UpdateArtwork(int id, UpdateArtworkDto dto);
     Task<ServiceResponse> DeleteArtwork(int id);
+    Task<PaginatedResult<ArtworkDto>> GetPaginatedArtworks(int page, int pageSize);
 }

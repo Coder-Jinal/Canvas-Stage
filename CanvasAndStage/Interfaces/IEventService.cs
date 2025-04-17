@@ -1,4 +1,5 @@
 ﻿using CanvasAndStage.Models;
+using CanvasAndStage.Models.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,5 +18,7 @@ namespace CanvasAndStage.Interfaces
 
         Task<ServiceResponse> LinkArtist(int eventId, int artistId);
         Task<ServiceResponse> UnlinkArtist(int eventId, int artistId);
+
+        Task<PaginatedResult<EventDto>> GetPaginatedEvents(int page, int pageSize);
     }
 }

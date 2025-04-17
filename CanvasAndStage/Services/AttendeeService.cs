@@ -1,6 +1,7 @@
 ﻿using CanvasAndStage.Data;
 using CanvasAndStage.Interfaces;
 using CanvasAndStage.Models;
+using CanvasAndStage.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -172,5 +173,46 @@ namespace CanvasAndStage.Services
             response.Status = ServiceResponse.ServiceStatus.Deleted;
             return response;
         }
+
+        public async Task<PaginatedResult<AttendeeDto>> GetPaginatedAttendees(int page, int pageSize)
+        {
+            var query = _context.Attendees
+                .Include(a => a.Events)
+                .Include(a => a.Purchases)
+                    .ThenInclude(p => p.Artwork)
+                .AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var pagedAttendees = await query
+                .OrderBy(a => a.FirstName) 
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            var items = pagedAttendees.Select(a => new AttendeeDto
+            {
+                AttendeeId = a.AttendeeId,
+                FirstName = a.FirstName,
+                LastName = a.LastName,
+                Email = a.Email,
+                ContactNumber = a.ContactNumber,
+                EventNames = a.Events.Select(e => e.Name).ToList(),
+                TotalEvents = a.Events.Count,
+                TotalPurchase = a.Purchases.Sum(p => p.TotalPrice),
+                TotalArtworksPurchased = a.Purchases.Count,
+                ArtworkNames = a.Purchases.Select(p => p.Artwork.Title).Distinct().ToList()
+            }).ToList();
+
+            return new PaginatedResult<AttendeeDto>
+            {
+                Items = items,
+                TotalCount = totalCount,
+                Page = page,
+                PageSize = pageSize
+            };
+        }
+
+
     }
 }

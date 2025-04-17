@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CanvasAndStage.Models.EventDto>
+﻿@model CanvasAndStage.Models.ViewModels.PaginatedResult<CanvasAndStage.Models.EventDto>
+
 @{
     ViewData["Title"] = "All Events";
 }
@@ -7,6 +8,7 @@
 
 <a class="btn btn-primary mb-3" asp-action="Add">Add New Event</a>
 
+<div>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -21,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var e in Model)
+        @foreach (var e in Model.Items)
         {
             <tr>
                 <td>@e.EventId</td>
@@ -40,3 +42,19 @@
         }
     </tbody>
 </table>
+
+    @if (Model.TotalPages > 1)
+    {
+        <nav aria-label="Pagination">
+            <ul class="pagination justify-content-center">
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.Page ? "active" : "")">
+                        <a class="page-link" asp-action="List" asp-route-page="@i" asp-route-pageSize="@Model.PageSize">@i</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+
+</div>

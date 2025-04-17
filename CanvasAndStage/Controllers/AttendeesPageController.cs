@@ -5,6 +5,7 @@ using CanvasAndStage.Models.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CanvasAndStage.Controllers
 {
@@ -33,11 +34,12 @@ namespace CanvasAndStage.Controllers
 
         // GET: AttendeesPage/List
         [HttpGet("List")]
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(int page = 1, int pageSize = 10)
         {
-            IEnumerable<AttendeeDto> attendees = await _attendeeService.ListAttendees();
-            return View(attendees);
+            var paginatedAttendees = await _attendeeService.GetPaginatedAttendees(page, pageSize);
+            return View(paginatedAttendees);
         }
+
 
         [HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(int id)
@@ -70,6 +72,7 @@ namespace CanvasAndStage.Controllers
 
         // POST: AttendeesPage/Add
         [HttpPost("Add")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(AddAttendeeDto dto)
         {
@@ -88,6 +91,7 @@ namespace CanvasAndStage.Controllers
 
         // GET: AttendeesPage/Edit/{id}
         [HttpGet("Edit/{id}")]
+        [Authorize]
         public async Task<IActionResult> Edit(int id)
         {
             var attendee = await _attendeeService.FindAttendee(id);
@@ -111,6 +115,7 @@ namespace CanvasAndStage.Controllers
 
         // POST: AttendeesPage/Edit/{id}
         [HttpPost("Edit/{id}")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, UpdateAttendeeDto dto)
         {
@@ -134,6 +139,7 @@ namespace CanvasAndStage.Controllers
 
         // GET: AttendeesPage/ConfirmDelete/{id}
         [HttpGet("ConfirmDelete/{id}")]
+        [Authorize]
         public async Task<IActionResult> ConfirmDelete(int id)
         {
             var attendee = await _attendeeService.FindAttendee(id);
@@ -148,6 +154,7 @@ namespace CanvasAndStage.Controllers
 
         // POST: AttendeesPage/Delete/{id}
         [HttpPost("Delete/{id}")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {

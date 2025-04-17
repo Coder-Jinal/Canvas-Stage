@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CanvasAndStage.Models.ArtworkDto>
+﻿@model CanvasAndStage.Models.ViewModels.PaginatedResult<CanvasAndStage.Models.ArtworkDto>
 
 @{
     ViewData["Title"] = "All Artworks";
@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var artwork in Model)
+        @foreach (var artwork in Model.Items)
         {
             <tr>
                 <td>@artwork.ArtworkId</td>
@@ -37,3 +37,14 @@
         }
     </tbody>
 </table>
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.Page ? "active" : "")">
+                <a class="page-link" asp-action="List" asp-route-page="@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

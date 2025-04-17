@@ -1,4 +1,5 @@
 ﻿using CanvasAndStage.Models;
+using CanvasAndStage.Models.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,5 +12,6 @@ namespace CanvasAndStage.Interfaces
         Task<ServiceResponse> AddAttendee(AddAttendeeDto dto);
         Task<ServiceResponse> UpdateAttendee(int id, UpdateAttendeeDto dto);
         Task<ServiceResponse> DeleteAttendee(int id);
+        Task<PaginatedResult<AttendeeDto>> GetPaginatedAttendees(int page, int pageSize);
     }
 }

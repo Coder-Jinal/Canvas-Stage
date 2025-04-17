@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CanvasAndStage.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CanvasAndStage.Controllers
 {
@@ -35,12 +36,12 @@ namespace CanvasAndStage.Controllers
             return RedirectToAction("List");
         }
 
-        // GET: EventsPage/List
+
         [HttpGet("List")]
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(int page = 1, int pageSize = 5)
         {
-            IEnumerable<EventDto> events = await _eventService.ListEvents();
-            return View(events);
+            var result = await _eventService.GetPaginatedEvents(page, pageSize);
+            return View(result);
         }
 
 
@@ -53,6 +54,7 @@ namespace CanvasAndStage.Controllers
 
         // POST: EventsPage/Add
         [HttpPost("Add")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(AddEventDto dto)
         {
@@ -71,6 +73,7 @@ namespace CanvasAndStage.Controllers
 
         // GET: EventsPage/Edit/{id}
         [HttpGet("Edit/{id}")]
+        [Authorize]
         public async Task<IActionResult> Edit(int id)
         {
             var eventDto = await _eventService.FindEvent(id);
@@ -94,6 +97,7 @@ namespace CanvasAndStage.Controllers
 
         // POST: EventsPage/Edit/{id}
         [HttpPost("Edit/{id}")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, UpdateEventDto dto)
         {
@@ -117,6 +121,7 @@ namespace CanvasAndStage.Controllers
 
         // GET: EventsPage/ConfirmDelete/{id}
         [HttpGet("ConfirmDelete/{id}")]
+        [Authorize]
         public async Task<IActionResult> ConfirmDelete(int id)
         {
             var eventDto = await _eventService.FindEvent(id);
@@ -131,6 +136,7 @@ namespace CanvasAndStage.Controllers
 
         // POST: EventsPage/Delete/{id}
         [HttpPost("Delete/{id}")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
@@ -183,6 +189,7 @@ namespace CanvasAndStage.Controllers
 
 
         [HttpPost("LinkArtist")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> LinkArtist(LinkArtistDto dto)
         {
             var response = await _eventService.LinkArtist(dto.EventId, dto.ArtistId);
@@ -195,6 +202,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpPost("UnlinkArtist")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> UnlinkArtist(LinkArtistDto dto)
         {
             var response = await _eventService.UnlinkArtist(dto.EventId, dto.ArtistId);
@@ -207,6 +215,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpPost("LinkAttendee")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> LinkAttendee(LinkAttendeeDto dto)
         {
             var response = await _eventService.LinkAttendee(dto.EventId, dto.AttendeeId);
@@ -219,9 +228,8 @@ namespace CanvasAndStage.Controllers
         }
 
 
-
-
         [HttpPost("UnlinkAttendee")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> UnlinkAttendee(LinkAttendeeDto dto)
         {
             var response = await _eventService.UnlinkAttendee(dto.EventId, dto.AttendeeId);

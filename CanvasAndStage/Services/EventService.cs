@@ -335,6 +335,45 @@ namespace CanvasAndStage.Services
             return response;
         }
 
+        public async Task<PaginatedResult<EventDto>> GetPaginatedEvents(int page, int pageSize)
+        {
+            var query = _context.Events
+                .Include(e => e.Attendees)
+                .Include(e => e.Artists)
+                .Include(e => e.Purchases)
+                .AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var pagedEvents = await query
+                .OrderBy(e => e.Date)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            var items = pagedEvents.Select(e => new EventDto
+            {
+                EventId = e.EventId,
+                Name = e.Name,
+                Location = e.Location,
+                Description = e.Description,
+                Date = e.Date,
+                TotalAttendees = e.Attendees.Count,
+                AttendeeNames = e.Attendees.Select(a => a.FirstName + " " + a.LastName).ToList(),
+                TotalArtists = e.Artists.Count,
+                ArtistNames = e.Artists.Select(a => a.FName + " " + a.LName).ToList(),
+                TotalPurchase = e.Purchases.Sum(p => p.TotalPrice)
+            }).ToList();
+
+            return new PaginatedResult<EventDto>
+            {
+                Items = items,
+                TotalCount = totalCount,
+                Page = page,
+                PageSize = pageSize
+            };
+        }
+
 
     }
 }

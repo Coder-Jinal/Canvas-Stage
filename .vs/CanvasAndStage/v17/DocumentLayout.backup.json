@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "D:\\Documents\\Backend\\CanvasAndStage\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\purchasescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\purchasescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\artworkscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\artworkscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\attendeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\attendeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\controllers\\artistscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\controllers\\artistscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|d:\\documents\\backend\\canvasandstage\\canvasandstage\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{802C06D6-0794-4584-B4B9-923EF544FE0F}|CanvasAndStage\\CanvasAndStage.csproj|solutionrelative:canvasandstage\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -29,8 +49,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PurchasesController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\PurchasesController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\PurchasesController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\PurchasesController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\PurchasesController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAwE8AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T20:03:26.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\EventsController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\EventsController.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAiwJ4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T19:58:40.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AttendeesController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\AttendeesController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\AttendeesController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\AttendeesController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\AttendeesController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAwFwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T19:54:49.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ArtworksController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtworksController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\ArtworksController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtworksController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\ArtworksController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T19:54:12.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ArtistsController.cs",
+              "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtistsController.cs",
+              "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\ArtistsController.cs",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtistsController.cs",
+              "RelativeToolTip": "CanvasAndStage\\Controllers\\ArtistsController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwF4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T19:01:38.01Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -49,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "CanvasAndStage\\Views\\Home\\Index.cshtml",
@@ -62,20 +147,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "CanvasAndStage\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "CanvasAndStage\\Views\\Shared\\_Layout.cshtml*",
-              "ViewState": "AgIAACAAAAAAAAAAAAAiwDEAAAAWAAAAAAAAAA==",
+              "ToolTip": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CanvasAndStage\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-01T19:03:05.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Program.cs",
               "RelativeDocumentMoniker": "CanvasAndStage\\Program.cs",
@@ -88,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "ArtistsPageController.cs",
               "DocumentMoniker": "D:\\Documents\\Backend\\CanvasAndStage\\CanvasAndStage\\Controllers\\ArtistsPageController.cs",
               "RelativeDocumentMoniker": "CanvasAndStage\\Controllers\\ArtistsPageController.cs",
@@ -101,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "dbo.Events [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_CanvasAndStage_beb91850_46f0_4f03_a932_5fdfb9c6c499/True/SqlTable/dbo.Events.sql",
               "ToolTip": "dbo.Events [Data]",

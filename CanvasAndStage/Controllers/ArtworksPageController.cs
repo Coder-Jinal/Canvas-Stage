@@ -1,6 +1,7 @@
 ﻿using CanvasAndStage.Interfaces;
 using CanvasAndStage.Models;
 using CanvasAndStage.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -26,11 +27,12 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpGet("List")]
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(int page = 1, int pageSize = 5)
         {
-            IEnumerable<ArtworkDto> artworks = await _artworkService.ListArtworks();
-            return View(artworks);
+            var result = await _artworkService.GetPaginatedArtworks(page, pageSize);
+            return View(result);
         }
+
 
         [HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(int id)
@@ -76,6 +78,7 @@ namespace CanvasAndStage.Controllers
 
 
         [HttpGet("Edit/{id}")]
+        [Authorize]
         public async Task<IActionResult> Edit(int id)
         {
             var artwork = await _artworkService.FindArtwork(id);
@@ -102,6 +105,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpPost("Edit/{id}")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, UpdateArtworkDto dto)
         {
@@ -125,6 +129,7 @@ namespace CanvasAndStage.Controllers
 
 
         [HttpGet("ConfirmDelete/{id}")]
+        [Authorize]
         public async Task<IActionResult> ConfirmDelete(int id)
         {
             var artwork = await _artworkService.FindArtwork(id);
@@ -138,6 +143,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpPost("Delete/{id}")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {

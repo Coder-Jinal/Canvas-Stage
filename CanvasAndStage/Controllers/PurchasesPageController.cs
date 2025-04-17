@@ -3,6 +3,7 @@ using CanvasAndStage.Interfaces;
 using CanvasAndStage.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CanvasAndStage.Controllers
 {
@@ -33,11 +34,12 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpGet("List")]
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(int page = 1, int pageSize = 5)
         {
-            IEnumerable<PurchaseDto> purchases = await _purchaseService.ListPurchases();
-            return View(purchases);
+            var result = await _purchaseService.GetPaginatedPurchases(page, pageSize);
+            return View(result);
         }
+
 
         [HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(int id)
@@ -60,6 +62,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpPost("Add")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(AddPurchaseDto dto)
         {
@@ -77,6 +80,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpGet("Edit/{id}")]
+        [Authorize]
         public async Task<IActionResult> Edit(int id)
         {
             var purchase = await _purchaseService.FindPurchase(id);
@@ -100,6 +104,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpPost("Edit/{id}")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, UpdatePurchaseDto dto)
         {
@@ -122,6 +127,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpGet("ConfirmDelete/{id}")]
+        [Authorize]
         public async Task<IActionResult> ConfirmDelete(int id)
         {
             var purchase = await _purchaseService.FindPurchase(id);
@@ -135,6 +141,7 @@ namespace CanvasAndStage.Controllers
         }
 
         [HttpPost("Delete/{id}")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {

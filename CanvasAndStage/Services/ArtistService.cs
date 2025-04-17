@@ -1,6 +1,7 @@
 ﻿using CanvasAndStage.Data;
 using CanvasAndStage.Interfaces;
 using CanvasAndStage.Models;
+using CanvasAndStage.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -176,5 +177,49 @@ namespace CanvasAndStage.Services
             response.Status = ServiceResponse.ServiceStatus.Deleted;
             return response;
         }
+
+        public async Task<PaginatedResult<ArtistDto>> GetPaginatedArtists(int page, int pageSize)
+        {
+            var query = _context.Artists
+                .Include(a => a.Artworks)
+                .AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var pagedArtists = await query
+                .OrderBy(a => a.FName) // Optional: alphabetical order
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            var items = pagedArtists.Select(a => new ArtistDto
+            {
+                ArtistId = a.ArtistId,
+                FName = a.FName,
+                LName = a.LName,
+                Bio = a.Bio,
+                EmailId = a.EmailId,
+                PhoneNumber = a.PhoneNumber,
+                TotalArtworks = a.Artworks.Count,
+
+                Artworks = a.Artworks.Select(art => new ArtworkDto
+                {
+                    ArtworkId = art.ArtworkId,
+                    Title = art.Title,
+                    Description = art.Description,
+                    Price = art.Price
+                }).ToList()
+
+            }).ToList();
+
+            return new PaginatedResult<ArtistDto>
+            {
+                Items = items,
+                TotalCount = totalCount,
+                Page = page,
+                PageSize = pageSize
+            };
+        }
+
     }
 }
