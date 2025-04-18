@@ -17,147 +17,147 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CanvasAndStage
 build_property.RootNamespace = CanvasAndStage
-build_property.ProjectDir = D:\Documents\Backend\Canvas-Stage\Canvas-Stage\CanvasAndStage\
+build_property.ProjectDir = D:\Documents\Backend\Canvas-Stage\CanvasAndStage\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Documents\Backend\Canvas-Stage\Canvas-Stage\CanvasAndStage
+build_property.MSBuildProjectDirectory = D:\Documents\Backend\Canvas-Stage\CanvasAndStage
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/Add.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0c1BhZ2VcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/ConfirmDelete.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/ConfirmDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0c1BhZ2VcQ29uZmlybURlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/Details.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0c1BhZ2VcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/Edit.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0c1BhZ2VcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/List.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtistsPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0c1BhZ2VcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/Add.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya3NQYWdlXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/ConfirmDelete.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/ConfirmDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya3NQYWdlXENvbmZpcm1EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/Details.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya3NQYWdlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/Edit.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya3NQYWdlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/List.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/ArtworksPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya3NQYWdlXExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/Add.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kZWVzUGFnZVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/ConfirmDelete.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/ConfirmDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kZWVzUGFnZVxDb25maXJtRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/Details.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kZWVzUGFnZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/Edit.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kZWVzUGFnZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/List.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/AttendeesPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kZWVzUGFnZVxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/EventsPage/Add.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/EventsPage/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzUGFnZVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/EventsPage/ConfirmDelete.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/EventsPage/ConfirmDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzUGFnZVxDb25maXJtRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/EventsPage/Details.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/EventsPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzUGFnZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/EventsPage/Edit.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/EventsPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzUGFnZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/EventsPage/List.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/EventsPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzUGFnZVxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/Home/Index.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/Home/Privacy.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/Add.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VzUGFnZVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/ConfirmDelete.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/ConfirmDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VzUGFnZVxDb25maXJtRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/Details.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VzUGFnZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/Edit.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VzUGFnZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/List.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/PurchasesPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VzUGFnZVxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/Shared/Error.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/Shared/_LoginPartial.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/_ViewImports.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/_ViewStart.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Documents/Backend/Canvas-Stage/Canvas-Stage/CanvasAndStage/Views/Shared/_Layout.cshtml]
+[D:/Documents/Backend/Canvas-Stage/CanvasAndStage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-nfgo25rxqd

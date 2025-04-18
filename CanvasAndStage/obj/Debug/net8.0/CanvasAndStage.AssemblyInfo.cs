@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CanvasAndStage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f2b652fcd5d6d1dcfe76e22dc7802fcf2e6d929")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ad53dbfba4f7635d6239ea618b981b3f42ac2a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CanvasAndStage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CanvasAndStage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

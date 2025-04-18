@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\Backend\\Canvas-Stage\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj": {}
+    "D:\\Documents\\Backend\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\Backend\\Canvas-Stage\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj": {
+    "D:\\Documents\\Backend\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\Backend\\Canvas-Stage\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj",
+        "projectUniqueName": "D:\\Documents\\Backend\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj",
         "projectName": "CanvasAndStage",
-        "projectPath": "D:\\Documents\\Backend\\Canvas-Stage\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj",
+        "projectPath": "D:\\Documents\\Backend\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj",
         "packagesPath": "C:\\Users\\JINAL PATEL\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\Backend\\Canvas-Stage\\Canvas-Stage\\CanvasAndStage\\obj\\",
+        "outputPath": "D:\\Documents\\Backend\\Canvas-Stage\\CanvasAndStage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JINAL PATEL\\AppData\\Roaming\\NuGet\\NuGet.Config",

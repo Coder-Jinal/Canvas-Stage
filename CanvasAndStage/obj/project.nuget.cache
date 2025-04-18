@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SnGnCd22CxY=",
+  "dgSpecHash": "3U1cB+I4zRE=",
   "success": true,
-  "projectFilePath": "D:\\Documents\\Backend\\Canvas-Stage\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj",
+  "projectFilePath": "D:\\Documents\\Backend\\Canvas-Stage\\CanvasAndStage\\CanvasAndStage.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JINAL PATEL\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\JINAL PATEL\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
